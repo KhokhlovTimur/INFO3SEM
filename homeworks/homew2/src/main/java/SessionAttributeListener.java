@@ -6,12 +6,12 @@ import java.util.*;
 
 @WebListener
 public class SessionAttributeListener implements HttpSessionAttributeListener {
-    private static final Map<String, List<String>> SESSION_HISTORY = new HashMap<>();
+    private static final Map<String, List<String>> CHAT_HISTORY = new HashMap<>();
     private static String chatId;
 
     public static List<String> getHistory(String chatID) {
         chatId = chatID;
-        List<String> history = SESSION_HISTORY.get(chatID);
+        List<String> history = CHAT_HISTORY.get(chatID);
         if (history != null) {
             return new LinkedList<>(history);
         }
@@ -40,7 +40,7 @@ public class SessionAttributeListener implements HttpSessionAttributeListener {
     }
 
     private void putToHistory(String chatID, String message) {
-        SESSION_HISTORY.computeIfAbsent(chatID, key -> new LinkedList<>()).add(message);
+        CHAT_HISTORY.computeIfAbsent(chatID, key -> new LinkedList<>()).add(message);
     }
 
     private String formPredefinedHistoryMessage(String value, String sessionID) {
