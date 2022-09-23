@@ -7,6 +7,8 @@
 <h1></h1>
 <form><p><label>
     <input name="login"  style="width: 230px; height: 45px; font-size: 20px" placeholder="Логин">
+    <%
+        System.out.println(request.getParameter("login")+32);%>
 </label></p>
     <button id="btn" style="width: 113px; height: 35px; font-size: 18px" type="submit">Отправить</button>
     <button style="width: 113px; height: 35px; font-size: 18px" type="reset">Сбросить</button>

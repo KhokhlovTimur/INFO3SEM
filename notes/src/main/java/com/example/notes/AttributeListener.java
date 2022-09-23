@@ -10,7 +10,7 @@ public class AttributeListener implements HttpSessionAttributeListener {
     private static String logiN;
     public static List<String> get(String login) {
         logiN = login;
-        List<String> mess = messages.get(login);
+        List<String> mess = messages.get(logiN);
         if (mess != null) {
             return new ArrayList<>(mess);
         }
@@ -20,7 +20,7 @@ public class AttributeListener implements HttpSessionAttributeListener {
     @Override
     public void attributeAdded(HttpSessionBindingEvent event) {
 
-        String message = formPredefinedHistoryMessage((String) event.getValue(), event.getSession().getId());
+        String message = formPredefinedHistoryMessage((String) event.getValue(), logiN);
         putToHistory(logiN, message);
     }
 

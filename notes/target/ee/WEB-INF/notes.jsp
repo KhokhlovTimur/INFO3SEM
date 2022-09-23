@@ -12,11 +12,16 @@
 </head>
 <body>
 
-<form method="post"><input type="text" name="message"><button type="submit">ok</button></form>
-<% List<String> messages = (List<String>) request.getAttribute("history");
-    for (String mess: messages) {  %>
-        <%=mess%>
+<form method="post">
+    <label><input name="message"  placeholder="Напишите сообщение..." ></label>
+    <button>Отправить</button>
+    <%System.out.println(request.getParameter("login")+100);%>
+</form>
+<ul>
+<% List<String> messages = (List<String>) request.getAttribute("history");%>
+ <%   for (String mess: messages) {  %>
+       <li><%=mess%></li>
   <%  } %>
-
+</ul>
 </body>
 </html>

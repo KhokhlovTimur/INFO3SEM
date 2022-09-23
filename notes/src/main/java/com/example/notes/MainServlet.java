@@ -17,14 +17,14 @@ public class MainServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter("login");
         if(nonNull(login)){
-            req.setAttribute("login", login);
+            req.getSession().setAttribute("login", login);
         }
         String password = req.getParameter("password");
         if(nonNull(password)){
             req.setAttribute("password", password);
         }
 //        req.setAttribute("history", MessagesHolder.get(req.getParameter("login")));
-        req.getRequestDispatcher("/WEB-INF/mainPage.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/WEB-INF/mainPage.jsp").forward(req, resp);
     }
 
 //    @Override
