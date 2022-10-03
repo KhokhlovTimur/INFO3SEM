@@ -34,7 +34,7 @@
     </dependencies>
 
     <build>
-        <finalName>ee</finalName>
+        <finalName>homew2</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

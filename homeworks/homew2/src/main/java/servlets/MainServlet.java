@@ -1,3 +1,5 @@
+package servlets;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
@@ -6,7 +8,7 @@ import java.io.IOException;
 
 import static java.util.Objects.nonNull;
 
-@WebServlet("/")
+@WebServlet("")
 public class MainServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
